@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="News.Business\**" />
+    <Compile Remove="News.Repositories\**" />
+    <Compile Remove="NewsApi\**" />
+    <EmbeddedResource Remove="News.Business\**" />
+    <EmbeddedResource Remove="News.Repositories\**" />
+    <EmbeddedResource Remove="NewsApi\**" />
+    <None Remove="News.Business\**" />
+    <None Remove="News.Repositories\**" />
+    <None Remove="NewsApi\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentMigrator.Runner.SQLite" Version="6.2.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\News.Repositories\News.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>
